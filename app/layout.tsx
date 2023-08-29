@@ -22,7 +22,7 @@ export default function RootLayout({
 			<body>
 				<main>
 					<Nav />
-					<div className='containter flex items-center'>
+					<div className='containter flex'>
 						<div className='w-full lg:w-3/4 h-2'>{children}</div>
 						<div className='w-1/4 hidden lg:flex'>
 							<NoteComponent />

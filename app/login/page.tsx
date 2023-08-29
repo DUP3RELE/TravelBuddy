@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default async function LogIn() {
 	return (
-		<div className='text-center justify-center'>
+		<div className='text-center'>
 			<h1 className='text-4xl font-bold tracking-tight sm:text-6xl mb-5'>
 				Log in!
 			</h1>

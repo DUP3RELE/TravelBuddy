@@ -53,6 +53,8 @@ body {
 }
 
 .inputStyle {
+  width: 15em;
+  height: 2.6rem;
   margin-left: 5px;
   border: 2px solid var(--card-main);
 }
@@ -63,4 +65,14 @@ body {
 .animation-one:hover {
   color: var(--secondary-color);
   scale: 1.1;
+}
+
+.items-top {
+  align-items: top;
+}
+
+@media (max-width: 640px) {
+  .inputStyle {
+    width: 13em;
+  }
 }/*# sourceMappingURL=globals.css.map */
