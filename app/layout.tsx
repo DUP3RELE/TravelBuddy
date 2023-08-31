@@ -4,6 +4,7 @@ import "../css/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NoteComponent from "./notes-component/page";
+import { AuthProvider } from "./Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,13 +22,15 @@ export default function RootLayout({
 		<html>
 			<body>
 				<main>
-					<Nav />
-					<div className='containter flex'>
-						<div className='w-full lg:w-3/4 h-2'>{children}</div>
-						<div className='w-1/4 hidden lg:flex'>
-							<NoteComponent />
+					<AuthProvider>
+						<Nav />
+						<div className='containter flex'>
+							<div className='w-full lg:w-3/4 h-2'>{children}</div>
+							<div className='w-1/4 hidden lg:flex'>
+								<NoteComponent />
+							</div>
 						</div>
-					</div>
+					</AuthProvider>
 				</main>
 				<footer>
 					<Footer />

@@ -2,8 +2,17 @@ import Image from "next/image";
 import icon from "./logo-no-background.png";
 import wave from "./img/wave-haikei-light-top.svg";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]/route";
+import LogRegButtons from "./components/logregbuttons";
+import UserPanel from "./dashboard/userPanel";
 
-export default function Nav() {
+export default async function Nav() {
+
+	const session = await getServerSession(authOptions);
+
+	const userContent = Boolean(session) ? <UserPanel /> : <LogRegButtons />;
+
 	return (
 		<nav>
 			<div className='flex items-center justify-between top-section w-full'>
@@ -44,20 +53,7 @@ export default function Nav() {
 						Contact
 					</Link>
 				</nav>
-				<div className=' items-center mr-5'>
-					<Link
-						className='m-1 animation-one'
-						href='/login'
-					>
-						Log in /
-					</Link>
-					<Link
-						className='animation-one'
-						href='/login/registerpanel'
-					>
-						Register
-					</Link>
-				</div>
+				<div>{userContent}</div>
 			</div>
 			<div>
 				<Image

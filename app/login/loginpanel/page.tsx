@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 export default function loginPanel() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [loginMessage, setLoginMessage] = useState("");
+	const [error, setError] = useState("");
 
 	const router = useRouter();
 
@@ -14,34 +15,22 @@ export default function loginPanel() {
 		e.preventDefault();
 
 		try {
-			const response = await fetch("http://localhost:3000/api/login", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ email, password }),
+			const res = await signIn("credentials", {
+				email,
+				password,
+				redirect: false,
 			});
 
-			if (response.status === 200) {
-				// Logowanie było udane
-				const data = await response.json();
-				setLoginMessage(data.message);
-
-				// Tutaj możesz wykonać dodatkowe działania po zalogowaniu
-			} else {
-				// Logowanie nie było udane
-				const data = await response.json();
-				setLoginMessage(data.message);
+			if (res.error) {
+				setError("Invalid Credentials");
 			}
-		} catch (error) {
-			console.error("Błąd logowania:", error);
-		}
+			router.replace("dashboard")
+		} catch (error) {}
 	};
 
 	return (
 		<div className='text-center justify-center'>
-			<form
-				onSubmit={handleLogin}
-				method='POST'
-			>
+			<form onSubmit={handleLogin} autoComplete="true">
 				<div className='m-2'>
 					<label
 						htmlFor='email'
@@ -52,11 +41,9 @@ export default function loginPanel() {
 					<input
 						className='inputStyle'
 						type='email'
-						id='email'
-						name='email'
-						value={email}
+						placeholder='E-mail'
 						onChange={(e) => setEmail(e.target.value)}
-						required
+						autoComplete="email"
 					/>
 				</div>
 				<div className='m-2'>
@@ -69,11 +56,9 @@ export default function loginPanel() {
 					<input
 						className='inputStyle'
 						type='password'
-						id='password'
-						name='password'
-						value={password}
+						placeholder='Password'
 						onChange={(e) => setPassword(e.target.value)}
-						required
+						autoComplete="current-password"
 					/>
 				</div>
 
@@ -83,6 +68,11 @@ export default function loginPanel() {
 				>
 					Log in
 				</button>
+				{error && (
+					<div className='bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2 ml-20'>
+						{error}
+					</div>
+				)}
 			</form>
 		</div>
 	);
