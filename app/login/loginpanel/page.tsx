@@ -20,17 +20,23 @@ export default function loginPanel() {
 				password,
 				redirect: false,
 			});
-
+			
 			if (res.error) {
 				setError("Invalid Credentials");
 			}
-			router.replace("dashboard")
+			router.replace("dashboard");
+			setInterval(() => {
+				window.location.reload(); // Przeładowanie strony co 3 sekundy
+			}, 1500);
 		} catch (error) {}
 	};
 
 	return (
 		<div className='text-center justify-center'>
-			<form onSubmit={handleLogin} autoComplete="true">
+			<form
+				onSubmit={handleLogin}
+				autoComplete='true'
+			>
 				<div className='m-2'>
 					<label
 						htmlFor='email'
@@ -43,7 +49,7 @@ export default function loginPanel() {
 						type='email'
 						placeholder='E-mail'
 						onChange={(e) => setEmail(e.target.value)}
-						autoComplete="email"
+						autoComplete='email'
 					/>
 				</div>
 				<div className='m-2'>
@@ -58,7 +64,7 @@ export default function loginPanel() {
 						type='password'
 						placeholder='Password'
 						onChange={(e) => setPassword(e.target.value)}
-						autoComplete="current-password"
+						autoComplete='current-password'
 					/>
 				</div>
 

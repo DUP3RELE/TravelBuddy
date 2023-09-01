@@ -6,11 +6,10 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 import LogRegButtons from "./components/logregbuttons";
 import UserPanel from "./dashboard/userPanel";
+import hamburger from "./img/bars-solid.svg";
 
 export default async function Nav() {
-
 	const session = await getServerSession(authOptions);
-
 	const userContent = Boolean(session) ? <UserPanel /> : <LogRegButtons />;
 
 	return (
@@ -27,6 +26,20 @@ export default async function Nav() {
 						/>
 					</Link>
 				</div>
+				<Link
+					href='/components/NavPopup/'
+					className=''
+				>
+					<button
+						className='hidden max-lg:flex nav-button'
+					>
+						<Image
+							src={hamburger}
+							alt='hamburger icon'
+							className='hamburger'
+						/>
+					</button>
+				</Link>
 				<nav className='hidden lg:flex space-x-4 nav'>
 					<Link
 						className='m-2 animation-one p-1'

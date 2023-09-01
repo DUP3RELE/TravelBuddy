@@ -18,7 +18,7 @@ export default function UserInfo() {
 			</div>
 			<button
 				onClick={() => signOut()}
-				className='bg-red-500 text-white font-bold px-6 py-2 mt-3'
+				className='bg-red-500 text-white font-bold px-6 py-2 mt-3 rounded-lg drop-shadow-lg'
 			>
 				Log Out
 			</button>

@@ -1,0 +1,17 @@
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "../../api/auth/[...nextauth]/route";
+
+export async function Reload() {
+	const session = await getServerSession(authOptions);
+
+	const reloadPage = () => {
+		if (session) {
+			setInterval(() => {
+				window.location.reload(); // Przeładowanie strony co 3 sekundy
+			}, 1000);
+		} else {
+			console.log("hello");
+		}
+	};
+}

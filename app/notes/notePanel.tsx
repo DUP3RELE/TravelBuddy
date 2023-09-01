@@ -1,12 +1,11 @@
 import Link from "next/link";
+import CreateNoteButton from "./notesComponents/createButton";
 
 export default function NotePanel() {
 	return (
 		<>
 			<div className="flex justify-center">
-				<Link href={'/notesComponents/noteCreate'}>
-					<button className='button-one'>Create a Note!</button>
-				</Link>
+				<CreateNoteButton />
 				<Link href={'/notesComponents/noteUsers'}>
 					<button className='button-one'>Check out Your notes</button>
 				</Link>

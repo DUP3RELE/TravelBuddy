@@ -1,15 +1,55 @@
+"use client";
+import { useEffect, useState } from "react";
+
 export default function noteComponent() {
-	
-	
+	const [notes, setNotes] = useState([]);
+
+	useEffect(() => {
+		const getNotes = async () => {
+			try {
+				const res = await fetch("http://localhost:3000/api/Notes", {
+					cache: "no-store",
+				});
+
+				if (!res.ok) {
+					throw new Error("Failed to fetch notes");
+				}
+
+				const data = await res.json();
+				setNotes(data.notes);
+			} catch (error) {
+				console.log("Error loading notes: ", error);
+			}
+		};
+
+		getNotes();
+	}, []);
+
+	const moveCarousel = () => {
+		const firstNote = notes.shift();
+		setNotes([...notes, firstNote]);
+	};
+
+	useEffect(() => {
+		const interval = setInterval(moveCarousel, 2000);
+		return () => clearInterval(interval);
+	}, [notes]);
+
 	return (
-		<div>
-			<h1>Dzień dobry, to test</h1>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam harum,
-				iure amet saepe ullam dignissimos iusto commodi officia molestias rerum
-				sed magni earum praesentium quidem, perspiciatis sapiente error
-				blanditiis eius?
-			</p>
-		</div>
+		<>
+				<div className='note-containter'>
+					{notes.map((t) => (
+						<div
+							key={t._id}
+							className='note-containter__carousel'
+						>
+							<div className='note-containter__carousel-item'>
+								<h2 className='font-bold'>{t.title}</h2>
+								<div>{t.contents}</div>
+							</div>
+						</div>
+					))}
+				</div>
+		</>
 	);
 }

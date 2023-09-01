@@ -40,10 +40,11 @@ body {
   background-color: var(--card-background);
   border: 3px solid var(--card-main);
   border-radius: 15px;
+  box-shadow: 5px 3px 3px;
   transition: 0.3s;
 }
 .button-one:hover {
-  border-radius: 25px;
+  border-radius: 19px;
   background-color: var(--secondary-color);
   color: var(--card-main);
 }
@@ -67,6 +68,16 @@ body {
   scale: 1.1;
 }
 
+.animation-two {
+  transition: all 0.3s ease-out;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.animation-two:hover {
+  color: var(--secondary-color);
+  scale: 1.1;
+}
+
 .items-top {
   align-items: top;
 }
@@ -75,4 +86,96 @@ body {
   .inputStyle {
     width: 13em;
   }
+}
+.note-containter {
+  position: relative;
+  height: 400px;
+  width: 300px;
+  overflow: hidden;
+}
+.note-containter__carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.note-containter__carousel-item {
+  width: 250px;
+  height: 75px;
+  margin: 15px;
+  border: 3px solid var(--card-main);
+  background-color: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 5px 3px 3px;
+  animation: slide-up 2s linear infinite;
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-140%);
+  }
+}
+
+.notebox {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 10px;
+  height: 140px;
+  width: 330px;
+  margin: 15px;
+  border: 3px solid var(--card-main);
+  background-color: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 5px 3px 3px;
+}
+.notebox__content {
+  margin: 15px;
+}
+
+.nav-button {
+  position: absolute;
+  top: 25px;
+  right: 170px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: var(--card-main);
+  transition: 0.3s;
+}
+.nav-button:hover {
+  scale: 1.1;
+}
+
+.hamburger {
+  width: 20px;
+  height: 20px;
+  transform: translate(50%, 50%);
+}
+
+.burger-section {
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--main-color);
+  z-index: 1000;
+}
+
+.popup-item {
+  font-size: 45px;
+}
+
+.turnOff {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: var(--card-main);
+  border-radius: 50%;
+  top: 30px;
+  right: 30px;
 }/*# sourceMappingURL=globals.css.map */

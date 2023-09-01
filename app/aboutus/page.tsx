@@ -1,6 +1,19 @@
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+import DashboardButton from "../components/dashboardbutton";
+import RegisterButton from "../components/registerbutton";
 
-export default function Aboutus() {
+export default async function Aboutus() {
+	const session = await getServerSession(authOptions);
+	let userContent;
+
+	if (session) {
+		userContent = <DashboardButton />;
+	} else {
+		userContent = <RegisterButton />;
+	}
+
 	return (
 		<div>
 			<h1 className='text-center text-3xl font-bold tracking-tight sm:text-5xl'>
@@ -21,9 +34,7 @@ export default function Aboutus() {
 				pleasant!
 			</p>
 			<div className='textc-center flex justify-center'>
-				<Link href='/login/registerpanel'>
-					<button className='button-one'>Register</button>
-				</Link>
+				{userContent}
 				<Link href='/notes'>
 					<button className='button-one'>Check out notes!</button>
 				</Link>

@@ -18,18 +18,5 @@ const userSchema = new Schema(
 	{ timestamps: true }
 );
 
-const noteSchema = new Schema({
-	title: {
-		type: String,
-		required: true,
-	},
-	contents: {
-		type: String,
-		required: true,
-	},
-});
-
-const Note = models.Note || mongoose.model("Note", noteSchema);
-
 const User = models.User || mongoose.model("User", userSchema);
 export default User;
