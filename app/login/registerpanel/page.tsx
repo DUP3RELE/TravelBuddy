@@ -19,7 +19,7 @@ export default function RegisterPanel() {
 			return;
 		}
 		try {
-			const resUserExist = await fetch("http://localhost:3000/api/userExist", {
+			const resUserExist = await fetch("api/userExist", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
