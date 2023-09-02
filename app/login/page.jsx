@@ -19,7 +19,7 @@ export default async function LogIn() {
 				<LoginPanel />
 			</div>
 			<div>
-				<h4>You don't have account? </h4>
+				<h4>You dont have account? </h4>
 				<Link
 					
 					href='./login/registerpanel'

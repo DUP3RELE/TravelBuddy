@@ -17,11 +17,6 @@ export default async function NotesPage() {
 			<div className='flex justify-between'>
 				<h1 className='m-3 text-lg'>Here You can browse notes!</h1>
 				<div>{userContent}</div>
-				<input
-					placeholder='Search for notes'
-					type='text'
-					className='h-10'
-				/>
 			</div>
 			<NoteBank />
             <div className="h-60"></div>
