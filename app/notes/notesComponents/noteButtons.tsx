@@ -1,6 +1,6 @@
 const getNotes = async () => {
 	try {
-		const res = await fetch("api/Notes", {
+		const res = await fetch("travel-buddy1.vercel.app/api/Notes", {
 			cache: "no-store",
 		});
 
@@ -15,6 +15,7 @@ const getNotes = async () => {
 };
 
 export default async function noteButtons() {
+
 	const { notes } = await getNotes();
 
 	return (

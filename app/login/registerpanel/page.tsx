@@ -19,7 +19,7 @@ export default function RegisterPanel() {
 			return;
 		}
 		try {
-			const resUserExist = await fetch("api/userExist", {
+			const resUserExist = await fetch("../api/userExist", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function RegisterPanel() {
 				return;
 			}
 
-			const res = await fetch("api/register/", {
+			const res = await fetch("../api/register/", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ email, name, password }),

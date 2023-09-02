@@ -9,7 +9,7 @@ export async function Reload() {
 		if (session) {
 			setInterval(() => {
 				window.location.reload(); // Przeładowanie strony co 3 sekundy
-			}, 1000);
+			}, 10000);
 		} else {
 			console.log("hello");
 		}
