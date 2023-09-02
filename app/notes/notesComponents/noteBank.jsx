@@ -5,7 +5,7 @@ import { authOptions } from "../../api/auth/[...nextauth]/route";
 
 const getNotes = async () => {
 	try {
-		const res = await fetch("travel-buddy1.vercel.app/api/Notes", {
+		const res = await fetch("../api/Notes", {
 			cache: "no-store",
 		});
 
