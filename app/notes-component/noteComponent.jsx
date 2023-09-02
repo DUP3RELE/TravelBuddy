@@ -7,7 +7,7 @@ export default function NoteComponentJS() {
 	useEffect(() => {
 		const getNotes = async () => {
 			try {
-				const res = await fetch("http://localhost:3000/api/Notes", {
+				const res = await fetch("https://travel-buddy-cyan.vercel.app/api/Notes", {
 					cache: "no-store",
 				});
 

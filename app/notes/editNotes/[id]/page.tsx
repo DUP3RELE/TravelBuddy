@@ -2,7 +2,7 @@ import EditNoteForm from "@/app/notes/notesComponents/EditNoteForm";
 
 const getNoteById = async (id) => {
 	try {
-		const res = await fetch(`http://localhost:3000/api/Notes/${id}`, {
+		const res = await fetch(`https://travel-buddy-cyan.vercel.app/api/Notes/${id}`, {
 			cache: "no-store",
 		});
 
