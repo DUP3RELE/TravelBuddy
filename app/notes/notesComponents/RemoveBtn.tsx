@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 const getNotes = async () => {
 	try {
-		const res = await fetch("https://travel-buddy-cyan.vercel.app/Notes", {
+		const res = await fetch("Notes", {
 			cache: "no-store",
 		});
 
@@ -25,7 +25,7 @@ export default function RemoveBtn({ id }) {
 		const confirmed = confirm("Are you sure?");
 
 		if (confirmed) {
-			const res = await fetch(`https://travel-buddy-cyan.vercel.app/api/Notes?id=${id}`, {
+			const res = await fetch(`api/Notes?id=${id}`, {
 				method: "DELETE",
 			});
 

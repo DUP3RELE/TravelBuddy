@@ -13,7 +13,7 @@ export default function EditTopicForm({ id, title, contents }) {
     e.preventDefault();
 
     try {
-      const res = await fetch(`https://travel-buddy-cyan.vercel.app/api/Notes/${id}`, {
+      const res = await fetch(`api/Notes/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",

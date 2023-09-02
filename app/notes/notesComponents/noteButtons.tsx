@@ -1,6 +1,6 @@
 const getNotes = async () => {
 	try {
-		const res = await fetch("https://travel-buddy-cyan.vercel.app/api/Notes", {
+		const res = await fetch("api/Notes", {
 			cache: "no-store",
 		});
 

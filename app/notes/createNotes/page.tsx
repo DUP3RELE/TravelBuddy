@@ -18,7 +18,7 @@ export default function AddNote() {
 		}
 
 		try {
-			const res = await fetch("https://travel-buddy-cyan.vercel.app/api/Notes", {
+			const res = await fetch("api/Notes", {
 				method: "POST",
 				headers: {
 					"Content-type": "application/json",
