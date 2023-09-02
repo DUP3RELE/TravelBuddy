@@ -25,9 +25,9 @@ export default function LoginPanel() {
 				setError("Invalid Credentials");
 			}
 			router.replace("dashboard");
-			// setInterval(() => {
-			// 	window.location.reload(); // Przeładowanie strony co 3 sekundy
-			// }, 10000);
+			setInterval(() => {
+				window.location.reload(); // Przeładowanie strony co 3 sekundy
+			}, 3000);
 		} catch (error) {}
 	};
 
