@@ -26,7 +26,7 @@ export default function LoginPanel() {
 			}
 			router.replace("dashboard");
 			setInterval(() => {
-				window.location.reload(); // Przeładowanie strony co 3 sekundy
+				window.location.reload(); // Przeładowanie strony co 1,5 sekundy
 			}, 1500);
 		} catch (error) {}
 	};
