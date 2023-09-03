@@ -7,7 +7,7 @@ export default function NoteComponentJS() {
 	useEffect(() => {
 		const getNotes = async () => {
 			try {
-				const res = await fetch("api/Notes", {
+				const res = await fetch("api/notes", {
 					cache: "no-store",
 				});
 
@@ -34,7 +34,6 @@ export default function NoteComponentJS() {
 		const interval = setInterval(moveCarousel, 2000);
 		return () => clearInterval(interval);
 	}, [notes]);
-
 	return (
 		<>
 				<div className='note-containter'>

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -13,7 +11,7 @@ export default function EditTopicForm({ id, title, contents }) {
     e.preventDefault();
 
     try {
-      const res = await fetch(`api/Notes/${id}`, {
+      const res = await fetch(`api/notes/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",

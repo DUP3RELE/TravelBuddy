@@ -18,7 +18,7 @@ export default function AddNote() {
 		}
 
 		try {
-			const res = await fetch("api/Notes", {
+			const res = await fetch("api/notes", {
 				method: "POST",
 				headers: {
 					"Content-type": "application/json",

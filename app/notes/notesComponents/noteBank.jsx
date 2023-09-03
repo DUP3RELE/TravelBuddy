@@ -5,7 +5,7 @@ import { authOptions } from "../../api/auth/[...nextauth]/route";
 
 const getNotes = async () => {
 	try {
-		const res = await fetch("../api/Notes", {
+		const res = await fetch("http://localhost:3000/api/notes", {
 			cache: "no-store",
 		});
 
@@ -30,9 +30,5 @@ export default async function NotesList() {
 	}
 	await getNotes();
 
-	return (
-		<>
-			{userButtons}
-		</>
-	);
+	return <>{userButtons}</>;
 }

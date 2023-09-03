@@ -30,7 +30,7 @@ export default function Footer() {
 						height={70}
 					/>
 				</div>
-				<div className='w-1/4 footerColors z-10'>
+				<div className='w-1/4 footerColors z-10 hidden lg:flex'>
 					<h1 className='m-4'>Do You like this webpage? Contact me!</h1>
 				</div>
 				<div className='w-1/4 footerColors z-10 flex justify-end'>
