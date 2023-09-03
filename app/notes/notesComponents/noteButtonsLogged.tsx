@@ -2,23 +2,22 @@ import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
-const getNotes = async () => {
-	try {
-		const res = await fetch("api/notes", {
-			cache: "no-store",
-		});
-
-		if (!res.ok) {
-			throw new Error("Failed to fetch notes");
-		}
-
-		return res.json();
-	} catch (error) {
-		console.log("Error loading notes: ", error);
-	}
-};
-
 export default async function noteButtonsLogged() {
+	const getNotes = async () => {
+		try {
+			const res = await fetch("https://travel-buddy1.vercel.app/api/notes", {
+				cache: "no-store",
+			});
+
+			if (!res.ok) {
+				throw new Error("Failed to fetch notes");
+			}
+
+			return res.json();
+		} catch (error) {
+			console.log("Error loading notes: ", error);
+		}
+	};
 	const { notes } = await getNotes();
 
 	return (
