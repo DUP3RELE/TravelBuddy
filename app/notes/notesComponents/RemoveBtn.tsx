@@ -25,13 +25,16 @@ export default function RemoveBtn({ id }) {
 		const confirmed = confirm("Are you sure?");
 
 		if (confirmed) {
-			const res = await fetch(`api/Notes?id=${id}`, {
+			const res = await fetch(`api/notes?id=${id}`, {
 				method: "DELETE",
 			});
 
 			if (res.ok) {
 				router.refresh();
 			}
+			setInterval(() => {
+				window.location.reload(); // Przeładowanie strony co 1,5 sekundy
+			}, 1500);
 		}
 	};
 

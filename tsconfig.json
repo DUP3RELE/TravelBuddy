@@ -24,6 +24,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/notes-component/page.tsx", "app/login/registerpanel/serverreqest.tsx", "app/api/register/route.js", "app/login/loginpanel/page.jsx", "app/aboutus/page.jsx", "app/login/loginpanel/reload.jsx", "app/login/page.jsx", "app/nav.jsx", "app/notes/notesComponents/noteBank.jsx", "app/notes/page.jsx", "app/page.jsx", "app/notes/notesComponents/noteButtons.jsx", "app/notes/notesComponents/noteButtonsLogged.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/notes-component/page.tsx", "app/login/registerpanel/serverreqest.tsx", "app/api/register/route.js", "app/login/loginpanel/page.jsx", "app/aboutus/page.jsx", "app/login/loginpanel/reload.jsx", "app/login/page.jsx", "app/nav.jsx", "app/notes/notesComponents/noteBank.jsx", "app/notes/page.jsx", "app/page.jsx", "app/notes/notesComponents/noteButtons.jsx", "app/notes/notesComponents/noteButtonsLogged.jsx", "app/notes/editNotes/[id]/page.tsx"],
   "exclude": ["node_modules"]
 }
