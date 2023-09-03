@@ -6,11 +6,8 @@ export default function NotePanel() {
 		<>
 			<div className="flex justify-center">
 				<CreateNoteButton />
-				<Link href={'/notesComponents/noteUsers'}>
-					<button className='button-one'>Check out Your notes</button>
-				</Link>
-				<Link href={'/notesComponents/noteBank'}>
-					<button className='button-one'>Search notes</button>
+				<Link href={'/notes'}>
+					<button className='button-one'>Check out notes!</button>
 				</Link>
 			</div>
 		</>
