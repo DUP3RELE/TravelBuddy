@@ -1,11 +1,10 @@
-'use client'
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
 const getNotes = async () => {
 	try {
-		const res = await fetch("http://localhost:3000/api/notes", {
+		const res = await fetch("api/notes", {
 			cache: "no-store",
 		});
 
