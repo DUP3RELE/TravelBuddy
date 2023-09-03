@@ -18,7 +18,7 @@ export default function AddNote() {
 		}
 
 		try {
-			const res = await fetch("api/notes", {
+			const res = await fetch("../api/notes", {
 				method: "POST",
 				headers: {
 					"Content-type": "application/json",
@@ -29,7 +29,7 @@ export default function AddNote() {
 			if (res.ok) {
 				router.push("/notes");
 			} else {
-				throw new Error("Failed to create a topic");
+				throw new Error("Failed to create a note");
 			}
 		} catch (error) {
 			console.log(error);

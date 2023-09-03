@@ -2,7 +2,7 @@ import EditNoteForm from "@/app/notes/notesComponents/EditNoteForm";
 
 const getNoteById = async (id) => {
 	try {
-		const res = await fetch(`api/notes/${id}`, {
+		const res = await fetch(`../api/notes/${id}`, {
 			cache: "no-store",
 		});
 
