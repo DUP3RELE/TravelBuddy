@@ -34,7 +34,7 @@ export default function Footer() {
 					<h1 className='m-4  hidden lg:flex'>Do You like this webpage? Contact me!</h1>
 				</div>
 				<div className='w-1/4 footerColors z-10 flex justify-end'>
-					<nav className='flex m-3'>
+					<nav className='block sm:flex m-3'>
 						<Link
 							href='/'
 							className='m-1'

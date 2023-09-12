@@ -1,6 +1,6 @@
 import NoteComponentJS from "./noteComponent";
 
-export default async function noteComponent() {
+export default function noteComponent() {
 	return (
 		<>
 			<NoteComponentJS />

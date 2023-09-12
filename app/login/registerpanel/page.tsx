@@ -54,8 +54,8 @@ export default function RegisterPanel() {
 	
 
 	return (
-		<div className='w-3/4 flex'>
-			<h1 className='text-3xl font-bold tracking-tight sm:text-5xl m-5 sm:flex'>
+		<div className='w-3/4 box justify-center ml-5 sm:flex'>
+			<h1 className='text-3xl font-bold tracking-tight sm:text-5xl m-5'>
 				Create Your account:
 			</h1>
 			<form onSubmit={registerUser} autoComplete="true">

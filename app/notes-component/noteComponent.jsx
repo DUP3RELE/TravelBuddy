@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function NoteComponentJS() {
 	const [notes, setNotes] = useState([]);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const getNotes = async () => {
@@ -17,8 +18,10 @@ export default function NoteComponentJS() {
 
 				const data = await res.json();
 				setNotes(data.notes);
+				setLoading(false);
 			} catch (error) {
 				console.log("Error loading notes: ", error);
+				setLoading(false);
 			}
 		};
 
@@ -26,7 +29,7 @@ export default function NoteComponentJS() {
 	}, []);
 
 	const moveCarousel = () => {
-		const firstNote = notes.shift();
+		const firstNote =  notes.shift();
 		setNotes([...notes, firstNote]);
 	};
 
@@ -34,6 +37,11 @@ export default function NoteComponentJS() {
 		const interval = setInterval(moveCarousel, 2000);
 		return () => clearInterval(interval);
 	}, [notes]);
+
+	if (loading) {
+		return <div>Loading...</div>;
+	  }
+	  
 	return (
 		<>
 				<div className='note-containter'>

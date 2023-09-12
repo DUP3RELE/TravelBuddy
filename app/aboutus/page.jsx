@@ -25,8 +25,7 @@ export default async function Aboutus() {
 				You are visiting!
 			</p>
 			<p className='m-4 flex justify-center'>
-				If You are local - post tips about Your city or country to help visitors
-				and get points!
+				If You are local - post tips about Your city or country to help visitors!
 			</p>
 			<p className='m-4 flex justify-center'>
 				If You are a visitor - read notes about city or country that You are
