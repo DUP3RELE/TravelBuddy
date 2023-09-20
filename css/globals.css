@@ -9,16 +9,6 @@
   --text-color: black;
   --gradient-background: ;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --main-color: #42032c;
-    --secondary-color: #d36b00;
-    --card-background: #e6d2aa;
-    --card-main: #f1efdc;
-    --text-color: white;
-  }
-}
 body {
   box-sizing: border-box;
   margin: 0;
