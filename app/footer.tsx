@@ -25,7 +25,7 @@ export default function Footer() {
 					<Image
 						src={icon}
 						alt='Travel Buddy logo'
-						className='dark:invert m-2 text-2xl font-bold mr-4 ml-4'
+						className='m-2 text-2xl font-bold mr-4 ml-4'
 						width={70}
 						height={70}
 					/>
