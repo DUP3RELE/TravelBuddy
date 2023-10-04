@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 export default function AddNote() {
 	const [title, setTitle] = useState("");
 	const [contents, setContents] = useState("");
+	const [city, setCity] = useState("");
+	const [country, setCountry] = useState("");
 
 	const router = useRouter();
 
@@ -54,6 +56,20 @@ export default function AddNote() {
 
 				<input
 					onChange={(e) => setContents(e.target.value)}
+					value={contents}
+					className='border border-slate-500 px-8 py-2'
+					type='text'
+					placeholder='Note contents'
+				/>
+				<input
+					onChange={(e) => setCountry(e.target.value)}
+					value={country}
+					className='border border-slate-500 px-8 py-2'
+					type='text'
+					placeholder='Note contents'
+				/>
+				<input
+					onChange={(e) => setCity(e.target.value)}
 					value={contents}
 					className='border border-slate-500 px-8 py-2'
 					type='text'
